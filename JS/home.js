@@ -43,7 +43,6 @@ document.getElementById("button-logout").addEventListener("click", function() {
 
 document.getElementById("transaction-form").addEventListener("submit", function(e) {
     e.preventDefault();
-    alert("Aqui!");
     const value = parseFloat(document.getElementById("value-input").value);
     const description = document.getElementById("description-input").value;
     const date = document.getElementById("data-input").value;
