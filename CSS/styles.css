@@ -89,6 +89,13 @@ header {
     color: #ffffff;
 }
 
+@media (max-width: 991px) { /* Bootstrap md breakpoint */
+    .coins {
+        display: none !important;
+    }
+}
+
+
 .button-float:hover {
     border: #4c79d3;
     background-color: #ffffff;
