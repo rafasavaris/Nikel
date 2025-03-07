@@ -1,12 +1,14 @@
 const myModal = new bootstrap.Modal("#transaction-modal");
+const mySecondModal = new bootstrap.Modal("#transaction-remove-modal");
+
 let logged = sessionStorage.getItem("logged");
 const session = localStorage.getItem("session");
+
 let cashIn = [];
 let cashOut = [];
 let data = {
     transactions: []
 };
-
 
 checkLogged();
 
@@ -27,7 +29,6 @@ function checkLogged() {
     }
 
     getTransactions();
-
 };
 
 function logout() {
@@ -43,10 +44,10 @@ document.getElementById("button-logout").addEventListener("click", function() {
 
 document.getElementById("transaction-form").addEventListener("submit", function(e) {
     e.preventDefault();
-    const value = parseFloat(document.getElementById("value-input").value);
-    const description = document.getElementById("description-input").value;
-    const date = document.getElementById("data-input").value;
-    const type = document.querySelector('input[name="type-input"]:checked').value;
+    const value = parseFloat(document.getElementById("value-remove-input").value);
+    const description = document.getElementById("description-remove-input").value;
+    const date = document.getElementById("data-remove-input").value;
+    const type = document.querySelector('input[name="type-remove-input"]:checked').value;
 
     data.transactions.unshift({
         value: value, type: type, description: description, data: date
@@ -60,6 +61,33 @@ document.getElementById("transaction-form").addEventListener("submit", function(
     getTransactions();
 });
 
+document.getElementById("transaction-remove-form").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const transactions = data.transactions;
+    const value = parseFloat(document.getElementById("value-remove-input").value);
+    const description = document.getElementById("description-remove-input").value;
+    const date = document.getElementById("data-remove-input").value;
+    const type = document.querySelector('input[name="type-remove-input"]:checked').value;
+
+    const found = transactions.findIndex(item => item.value.toFixed(2) == value.toFixed(2) && 
+    item.description == description && item.data == date && item.type == type);
+
+    console.log(found);
+    if(found !== -1) {
+        transactions.splice(found, 1);
+        
+        e.target.reset();
+        mySecondModal.hide();
+        saveDate(data)
+        getTransactions();
+
+        alert("Lançamento removido com sucesso!");  
+    } else {
+        alert("Lançamento não encontrado. Revise as informações.");
+    }
+});
+
 function getTransactions() {
     const transactions = data.transactions;
     let transactionsHtml = ``;
@@ -69,7 +97,7 @@ function getTransactions() {
         if(item.type === "2") {
             type = "Saída"
         }
-
+        
         transactionsHtml += `
             <tr>
                 <th scope="row">${item.data}</th>

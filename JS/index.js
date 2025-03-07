@@ -1,8 +1,8 @@
 const myModal = new bootstrap.Modal("#register-modal");
 let logged = sessionStorage.getItem("logged");
 const session = localStorage.getItem("session");
-//Logar no sistema
 
+//Logar no sistema
 checkLogged();
 
 document.getElementById("login-form").addEventListener("submit", function(e) {
@@ -29,8 +29,6 @@ document.getElementById("login-form").addEventListener("submit", function(e) {
         saveSession(email, checkSession);
         window.location.href = "home.html"
     }
-    
-
 });
 
 function checkLogged() {
@@ -41,10 +39,10 @@ function checkLogged() {
 
     if(logged) {
         saveSession(logged, session);
-
         window.location.href = "home.html";
     }
-}
+};
+
 // Criar conta
 document.getElementById("create-form").addEventListener("submit", function(e) {
     e.preventDefault();
@@ -68,9 +66,10 @@ document.getElementById("create-form").addEventListener("submit", function(e) {
         password: password,
         transactions: []
     })
+
     myModal.hide();
-    
     alert("Conta criada com sucesso!");
+
     window.location.href = "home.html";
     
 });
@@ -79,7 +78,7 @@ document.getElementById("create-form").addEventListener("submit", function(e) {
 function saveAccount(data) {
     localStorage.setItem(data.login, JSON.stringify(data));
     console.log(data);
-}
+};
 
 function getAccount(key) {
     const account = localStorage.getItem(key);
@@ -89,7 +88,7 @@ function getAccount(key) {
     }
 
     return "";
-}
+};
 
 function saveSession(data, saveSession) {
     if(saveSession) {
@@ -97,4 +96,4 @@ function saveSession(data, saveSession) {
     }
 
     sessionStorage.setItem("logged", data);
-}
+};

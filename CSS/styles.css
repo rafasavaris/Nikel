@@ -89,6 +89,19 @@ header {
     color: #ffffff;
 }
 
+.button-float-remove {
+    border-radius: 100%;
+    height: 60px;
+    width: 60px;
+    position: fixed;
+    padding: 0 !important;
+    bottom: 6rem;
+    right: 2rem;
+    font-size: 35px;
+    border: 2px solid #4c0070;
+    background-color: #4c0070;
+    color: #ffffff;
+}
 @media (max-width: 991px) { /* Bootstrap md breakpoint */
     .coins {
         display: none !important;
