@@ -1,22 +1,41 @@
-# Nikel
+# Nikel 💰
 
-Este é um projeto do curso "Codaí 2.0 - Primeiros passos no Front-End" da [GrowDev](https://www.growdev.com.br).
-O projeto é desenvolvido em HTML, JS e CSS e permite o cadastro e login de usuários,
-além do cadastro de transações realizados por eles.
+This project was developed as part of the **"Codaí 2.0 – First Steps in Front-End"** course offered by [GrowDev](https://www.growdev.com.br).
 
-***
-## Software necessário
+The application was built using **HTML, CSS, and JavaScript** and allows users to:
+- Register and log in
+- Record financial transactions
+- Manage their personal transaction history
 
-Para desenvolver este projeto, foi utilizado HTML, CSS e JavaScript. O projeto foi desenvolvido no [Visual Studio Code](https://code.visualstudio.com),
-então, para a visualização deste site - uma vez que ele não está "publicado", é apenas um projeto, eu utilizei a
-extensão "Live Server", da própria ferramenta.
+---
 
-## Alterações em relação à aula
+## 🧰 Required Software
 
-Duas alterações feitas a partir do código inicial ensinado nas aulas foram:
-1. Adição do botão "Remover transação" nas páginas "home" e "transactions";
-2. Ocultar as moedas na página "index" quando a tela fica pequena, no CSS.
+This project was developed using:
+- **HTML**
+- **CSS**
+- **JavaScript**
 
-***
+The development environment used was [Visual Studio Code](https://code.visualstudio.com).  
+Since the project is not deployed online, the **Live Server** extension was used to preview the application locally.
 
-Qualquer dúvida, entre em contato!
+---
+
+## 🔧 Improvements Over the Original Course Project
+
+Two enhancements were implemented beyond the original code provided in the course:
+
+1. Added a **"Remove Transaction"** button on both the **Home** and **Transactions** pages.
+2. Improved responsiveness by **hiding currency labels on smaller screens** using CSS.
+
+---
+
+## 📌 Notes
+
+This project focuses on practicing core Front-End concepts such as:
+- DOM manipulation
+- Event handling
+- Basic state management
+- Responsive layout with CSS
+
+---
